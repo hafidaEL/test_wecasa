@@ -27,8 +27,6 @@ const haircutPrestationSlice = createSlice({
 
 export const { getHaircutPrestation, getHaircutPrestationSuccess, getHaircutPrestationFailure } = haircutPrestationSlice.actions
 
-export const haircutPrestationSelector = state => state.haircutPrestation
-
 export default haircutPrestationSlice.reducer
 
 export function fetchHaircutPrestation() {
