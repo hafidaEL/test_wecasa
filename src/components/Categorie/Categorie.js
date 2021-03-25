@@ -2,6 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import {useParams} from 'react-router-dom'
 import { getCategorieByReference } from '../../selectors/HaircutPrestation'
+import { 
+    CategorieStyle, 
+    ListPrestation, 
+    Title,
+    PrestationStyle,
+ } from './Categorie.styles'
+import Prestation from './Prestation'
+import Basket from '../Basket/Basket'
 
 export default function Categorie() {
     let { reference } = useParams();
@@ -10,17 +18,19 @@ export default function Categorie() {
     console.log("categorie ", categorie)
     const renderPrestation = () => {
         if (categorie.prestations)
-          return categorie.prestations.map( prestation =>
-            <div key={prestation.reference} className='tile'>
-                <p>{prestation.title}</p>
-                <p>{prestation.duration}</p>
-                <p>{prestation.price}</p>
-            </div>
-          ) 
+          return categorie.prestations.map( prestation => 
+            <PrestationStyle key={prestation.reference} className='tile'>
+                <Prestation prestation={prestation} />
+            </PrestationStyle>
+          )
     }
     return (
-        <div>
-            prestations de {reference} :  {renderPrestation()}
-        </div>
+        <CategorieStyle>
+            <Title>prestations de {reference}</Title>  
+            <ListPrestation>
+                {renderPrestation()}
+            </ListPrestation>
+            <Basket />
+        </CategorieStyle>
     )
 }
