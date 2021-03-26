@@ -17,9 +17,6 @@ const HaircutPrestation = () => {
     const renderHaircutPrestation = () => {
         if (loading) return <p>Loading haircut prestation...</p>
         if (hasErrors) return <p>Cannot display haircut prestation...</p>
-        console.log(loading+' haircutPrestation : ', haircutPrestation)
-
-        console.log(loading+' haircutPrestation categories: ', haircutPrestation.categories)
         const { categories } = haircutPrestation
   
         if (categories)

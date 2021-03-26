@@ -6,7 +6,7 @@ export default function Confirmation() {
 
     return (       
        <>
-        Confirmation
+        Votre rendez-vous est confirmé. Merci à vous pour votre confiance :)
       </>
     )
 }

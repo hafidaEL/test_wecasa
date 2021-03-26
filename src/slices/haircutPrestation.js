@@ -35,7 +35,6 @@ export function fetchHaircutPrestation() {
         try {
             const response = await fetch('https://www.wecasa.fr/api/techtest/universe')
             const data = await response.json()
-            console.log("data ", data);
             dispatch(getHaircutPrestationSuccess(data))
         }
         catch (error) {

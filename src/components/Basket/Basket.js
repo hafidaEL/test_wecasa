@@ -12,11 +12,11 @@ export default function Basket() {
     const adress = useSelector(getUserAdress)
     return (
         <>
-            {basket && 
+            {basket.totalPrice > 0 && 
                 <BasketStyle>
                     <p>Prix total : {showPrice(basket.totalPrice)}</p>
                     <p>Durée totale : {showDuration(basket.totalDuration)}</p>
-                    <Link to={`/adress`}>Adress selection</Link>
+                    <Link to={`/adress`}>Adress selection</Link> 
                 </BasketStyle>
             }
             {

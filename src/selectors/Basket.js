@@ -15,3 +15,12 @@ export const getQuantityByReference = (reference) => state => {
         return prestation.qty
     return 0; 
 }
+
+export const getReferences = state => {
+    const basket = getBasket(state)
+    if (basket.prestations) {
+        return basket.prestations.map(
+            prestation =>  prestation.reference
+        )
+    }          
+} 
